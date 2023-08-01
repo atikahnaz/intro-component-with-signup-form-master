@@ -17,13 +17,14 @@ body {
     background-size: 1440px;
     background-position: center;
     min-height: 100vh;
+    padding-left: 100px;
+    padding-right: 100px;
 
 }
 
 .outer-container {
     display: flex;    
-    position: relative;
-    left: 100px;
+    justify-content: space-between;
     
 }
 
@@ -33,10 +34,30 @@ main {
     justify-content: center;
     align-items: center;
     color: hsl(240, 8%, 95%);
-    width: 40%;
+    width: 50%;
+}
+
+main h1 {
+    font-size: 50px;
+    font-weight: 700;
 }
 
 main p{
+    font-size: 16px;
     font-weight: 400;
+}
+.form-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.try-button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    background-color: hsl(248, 32%, 49%);
+    font-size: 16px;
 }
