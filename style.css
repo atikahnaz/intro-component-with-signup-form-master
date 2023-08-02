@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    max-width: 1440px;
 }
 
 .body-image {
@@ -26,7 +27,7 @@ body {
     display: flex;    
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 20px; 
+    padding: 20px 20px; 
 
 }
 
@@ -36,7 +37,7 @@ main {
     justify-content: center;
     align-items: center;
     color: hsl(240, 8%, 95%);
-    max-width: 50%;
+    max-width: 40%;
     
 }
 
@@ -45,36 +46,40 @@ main h1 {
     font-weight: 700;
 }
 
-main p{
+main p {
     font-size: 16px;
     font-weight: 400;
+    max-width: 100%;
 }
 .form-register {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 .try-button {
     display:flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
     background-color: hsl(248, 32%, 49%);
     font-size: 16px;
     color:hsl(240, 8%, 95%);
-    padding: 20px 30px;
+    padding: 20px 75px;
+    max-width: 100%;
+    border-radius: 10px;
+    
 }
 
 .form {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 20px;
+    padding: 40px;
     margin-top: 20px;
-    min-width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 .form-email div{
@@ -83,7 +88,6 @@ main p{
     border-color: hsl(246, 25%, 77%);
     border-radius: 5px;
     padding: 20px;
-    
     color: hsl(247, 4%, 52%);
     font-weight: 500;
     margin-bottom: 20px;
@@ -97,8 +101,10 @@ main p{
     padding: 20px;
     font-weight: 500;
     color:hsl(240, 8%, 95%);
+    border-radius: 10px;
 }
 
 .term-services {
     font-size: 12px;
+    text-align: center;
 }
