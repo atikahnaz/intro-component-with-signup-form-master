@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  
   <title>Frontend Mentor | Intro component with sign up form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -33,10 +33,14 @@
           
         <form id="form">
           <div class="form-email">
-             <input type="text" id="first-name" placeholder="First Name">
-            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="text" id="firstName" placeholder="First Name">
+            <div id="errorFirst" class="error"></div>
+            <input type="text" id="lastName" placeholder="Last Name">
+            <div id="errorLast" class="error"></div>
             <input type="email" id="email" placeholder="Email Address">
+            <div id="errorEmail" class="error"></div>
             <input type="password" id="password" placeholder="Password"> 
+            <div id="errorPwd" class="error"></div>
             <!-- <div>First Name</div>
             <div>Last Name</div>
             <div>Email Address</div>
@@ -54,6 +58,6 @@
     </div>
   </div>
   
-  
+<script src="script.js"></script>
 </body>
 </html>

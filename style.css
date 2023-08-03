@@ -111,12 +111,20 @@ form {
     color: hsl(240, 12%, 12%);
     font-weight: 600;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     width: 100%;
 }
 
 input:required:invalid {
     border-color: red;
+}
+
+.error {
+    display: block;
+    text-align: end;
+    top: 0;
+    font-style: italic;
+    color: hsl(0, 100%, 74%)
 }
 
 #claimButton {
@@ -133,6 +141,8 @@ input:required:invalid {
     border-radius: 10px;
     border: none;
     box-shadow: 0 2px 4px rgb(46, 111, 38);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .term-services {
