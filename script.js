@@ -10,26 +10,29 @@ const errorLast = document.getElementById('errorLast');
 
 
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault;
+claim.addEventListener('click', (event) => {
+    event.preventDefault();
     const firstName = fName.value;
     const lastName = lName.value;
+    
     // Check if the input is empty or contains only whitespace characters
-    if (firstName === '') {
+    if (firstName === '' || lastName === '') {
        showError(errorFirst, "First Name cannot be empty");
+       showError(errorLast, "Last Name cannot be empty");
     } else {
         // The input is not empty, clear the error message and submit the form
         clearError(errorFirst)
+        clearError(errorLast)
         this.submit();
     }
 
-    if (lastName === '') {
+     /*if (lastName === '') {
         showError(errorLast, "Last Name cannot be empty");
      } else {
          // The input is not empty, clear the error message and submit the form
          clearError(errorLast)
          this.submit();
-     }
+     }*/
 
   
 });
