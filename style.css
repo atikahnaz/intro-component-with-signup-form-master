@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 body {
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 .body-image {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
     background-image: url("images/bg-intro-desktop.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: hsl(0, 100%, 74%);
     min-height: 100vh;
@@ -22,9 +25,11 @@ body {
 .outer-container {
     display: flex;    
     flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 60px;
+    margin-right: 40px;
+    
 }
 
 main {
@@ -33,7 +38,8 @@ main {
     justify-content: center;
     align-items: center;
     color: hsl(240, 8%, 95%);
-    max-width: 50%;
+    max-width: 40%;
+
 }
 
 main h1 {
@@ -49,10 +55,13 @@ main p {
 }
 .form-register {
     display: flex;
+    flex-grow: 0.2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .try-button {
@@ -62,15 +71,11 @@ main p {
     background-color: hsl(248, 32%, 49%);
     font-size: 16px;
     color:hsl(240, 8%, 95%);
-    padding: 20px 90px;
-    max-width: 100%;
     border-radius: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
     font-weight: 600;
-}
-
-.price {
-    font-weight: 400;
-
+    width: 100%;
 }
 
 .form {
@@ -81,6 +86,7 @@ main p {
     margin-top: 20px;
     max-width: 100%;
     border-radius: 10px;
+    width: 100%;
 }
 
 .form-email div{
@@ -103,6 +109,7 @@ main p {
     font-weight: 500;
     color:hsl(240, 8%, 95%);
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .term-services {
