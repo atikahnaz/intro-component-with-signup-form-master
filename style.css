@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
     background-color: hsl(0, 100%, 74%);
     min-height: 100vh;
+    min-width: 100vw;
     
 }
 
