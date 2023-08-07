@@ -1,15 +1,17 @@
 
 const claim = document.getElementById('claimButton');const form = document.getElementById('form');
+
+// error message container
 const errorFirst = document.getElementById('errorFirst');
 const errorLast = document.getElementById('errorLast');
 const errorEmail = document.getElementById('errorEmail');
 const errorPwd = document.getElementById('errorPwd');
+
+// input container
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-
-
 
 claim.addEventListener('click', (event) => {
     event.preventDefault();
@@ -18,7 +20,6 @@ claim.addEventListener('click', (event) => {
     if (firstName.value === '') {
        showError(errorFirst, "First Name cannot be empty");
        showImage(firstName);
-       
     } else {
         //clearInput(firstName);
         clearError(errorFirst);
@@ -45,7 +46,6 @@ claim.addEventListener('click', (event) => {
             clearError(errorEmail);
             clearImage(email);
         }
-        
      }
 
      if (password.value === '') {
@@ -55,31 +55,31 @@ claim.addEventListener('click', (event) => {
         //clearInput(password);
         clearError(errorPwd);
         clearImage(password);
-        
      }
-
     });
 
-
+// display error message
 function showError(errorContainer, message) {
     errorContainer.textContent = message;
 }
 
+// show error icon
 function showImage(inputContainer) {
     inputContainer.placeholder = '';
     inputContainer.style.backgroundImage = "url('images/icon-error.svg')";
     inputContainer.style.backgroundRepeat = "no-repeat";
     inputContainer.style.backgroundPosition = "right 20px center";
-};
+}
 
+// clear error icon
 function clearImage(inputContainer) {
     inputContainer.style.backgroundImage = 'none';
 }
 
-// Function to clear the error message
+// clear the error message
 function clearError(errorContainer) {
     errorContainer.textContent = '';
-};
+}
 
 function isValidEmail(email) {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;

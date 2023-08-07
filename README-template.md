@@ -64,8 +64,30 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+1. to prevent the form auto reload as original after submitting the form. This will display any error message from the input field.
+```js
 event.preventDefault();
-to prevent the form auto reload as original after submitting the form. This will display any error message from the input field.
+```
+
+2. edit input placeholder and and add image icon.
+```js
+function showImage(inputContainer) {
+    inputContainer.placeholder = '';
+    inputContainer.style.backgroundImage = "url('images/icon-error.svg')";
+    inputContainer.style.backgroundRepeat = "no-repeat";
+    inputContainer.style.backgroundPosition = "right 20px center";
+}
+```
+3. display error message under input container
+  create empty div in html and use textContent to display message
+```html
+<input type="text" id="firstName" placeholder="First Name">
+<div id="errorFirst" class="error"></div>
+```
+```js
+errorContainer.textContent = message;
+```
+
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
