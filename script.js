@@ -3,76 +3,72 @@ const claim = document.getElementById('claimButton');
 const form = document.getElementById('form');
 const errorFirst = document.getElementById('errorFirst');
 const errorLast = document.getElementById('errorLast');
+const errorEmail = document.getElementById('errorEmail');
 const errorPwd = document.getElementById('errorPwd');
 const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 const errorImage = document.createElement('img');
-
 
 
 claim.addEventListener('click', (event) => {
     event.preventDefault();
-    
-    const lastName = document.getElementById('lastName').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    let formCheck = true;
+
+
     
     // Check if the input is empty or contains only whitespace characters
     if (firstName.value === '') {
        showError(errorFirst, "First Name cannot be empty");
-       showImage();
-       //showError(errorLast, "Last Name cannot be empty");
+       showImage(firstName);
+       
     } else {
-        // The input is not empty, clear the error message and submit the form
-        clearError(errorFirst)
-        formCheck = false;
-        //clearError(errorLast)
+        clearInput(firstName);
     }
 
-     if (lastName === '') {
+     if (lastName.value === '') {
         showError(errorLast, "Last Name cannot be empty");
-        showImage();
+        showImage(lastName);
      } else {
-         // The input is not empty, clear the error message and submit the form
-         clearError(errorLast)
+        clearInput(lastName);
      }
 
-     if (password === '') {
+     if (email.value === '') {
+        showError(errorEmail, "Looks like this is not an email");
+        showImage(email);
+     } else {
+        clearInput(email);
+     }
+
+     if (password.value === '') {
         showError(errorPwd, "Password cannot be empty");
+        showImage(password);
      } else {
-        clearError(errorPwd);
+        clearInput(password);
      }
 
-    // clear the form 
-    const inputElements = document.querySelectorAll('.form-email input');
-    inputElements.forEach(input => {
-    input.placeholder = '';
-
-    // Create an image element
-    const imageElement = document.createElement('img');
-
-    // Set the source of the image (replace 'path/to/your/image.jpg' with the actual image URL)
-    imageElement.src = 'images/icon-error.svg';
-
-    // Append the image element after the input element
-    input.insertAdjacentElement('afterend', imageElement);
-    
     });
-});
+
 
 function showError(errorContainer, message) {
     errorContainer.textContent = message;
-    
 }
 
-function showImage() {
-    errorImage.src = 'images/icon-error.svg';
-    firstName.appendChild(errorImage);
-    
+function showImage(inputContainer) {
+    // show image error
+    inputContainer.placeholder = '';
+    inputContainer.style.backgroundImage = "url('images/icon-error.svg')";
+    inputContainer.style.backgroundRepeat = "no-repeat";
+    inputContainer.style.backgroundPosition = "right 20px center";
+};
+
+function clearInput(inputContainer) {
+    inputContainer.value = '';
 }
 
-// Function to clear the error message
+/* Function to clear the error message
 function clearError(errorContainer) {
     errorContainer.textContent = 'hi';
     errorContainer.style.display = 'none';
-}
+};*/
+
