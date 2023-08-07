@@ -1,6 +1,5 @@
 
-const claim = document.getElementById('claimButton');
-const form = document.getElementById('form');
+const claim = document.getElementById('claimButton');const form = document.getElementById('form');
 const errorFirst = document.getElementById('errorFirst');
 const errorLast = document.getElementById('errorLast');
 const errorEmail = document.getElementById('errorEmail');
@@ -9,42 +8,54 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const errorImage = document.createElement('img');
+
 
 
 claim.addEventListener('click', (event) => {
     event.preventDefault();
 
-
-    
     // Check if the input is empty or contains only whitespace characters
     if (firstName.value === '') {
        showError(errorFirst, "First Name cannot be empty");
        showImage(firstName);
        
     } else {
-        clearInput(firstName);
+        //clearInput(firstName);
+        clearError(errorFirst);
+        clearImage(firstName);
     }
 
      if (lastName.value === '') {
         showError(errorLast, "Last Name cannot be empty");
         showImage(lastName);
      } else {
-        clearInput(lastName);
+        //clearInput(lastName);
+        clearError(errorLast);
+        clearImage(lastName);
      }
 
      if (email.value === '') {
-        showError(errorEmail, "Looks like this is not an email");
+        showError(errorEmail, "Email cannot be empty");
         showImage(email);
      } else {
-        clearInput(email);
+        if (!isValidEmail(email.value)) {
+            showError(errorEmail, "Looks like this is not an email");
+            showImage(email);
+        } else {
+            clearError(errorEmail);
+            clearImage(email);
+        }
+        
      }
 
      if (password.value === '') {
         showError(errorPwd, "Password cannot be empty");
         showImage(password);
      } else {
-        clearInput(password);
+        //clearInput(password);
+        clearError(errorPwd);
+        clearImage(password);
+        
      }
 
     });
@@ -55,20 +66,22 @@ function showError(errorContainer, message) {
 }
 
 function showImage(inputContainer) {
-    // show image error
     inputContainer.placeholder = '';
     inputContainer.style.backgroundImage = "url('images/icon-error.svg')";
     inputContainer.style.backgroundRepeat = "no-repeat";
     inputContainer.style.backgroundPosition = "right 20px center";
 };
 
-function clearInput(inputContainer) {
-    inputContainer.value = '';
+function clearImage(inputContainer) {
+    inputContainer.style.backgroundImage = 'none';
 }
 
-/* Function to clear the error message
+// Function to clear the error message
 function clearError(errorContainer) {
-    errorContainer.textContent = 'hi';
-    errorContainer.style.display = 'none';
-};*/
+    errorContainer.textContent = '';
+};
 
+function isValidEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
+  }
