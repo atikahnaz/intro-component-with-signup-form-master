@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github](https://github.com/atikahnaz/intro-component-with-signup-form-master/blob/main/index.html)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Intro component with signup form](https://atikahnaz.github.io/intro-component-with-signup-form-master/)
 
 ## My process
 
