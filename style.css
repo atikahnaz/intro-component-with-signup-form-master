@@ -30,7 +30,6 @@ body {
     justify-content: space-evenly;
     margin-left: 60px;
     margin-right: 40px;
-    
 }
 
 main {
@@ -106,7 +105,7 @@ form {
     flex-direction: column;
     border: 2px;
     border-style: solid;
-    border-color: hsl(246, 25%, 77%);
+    border-color: hsl(240, 18%, 90%);
     border-radius: 5px;
     padding: 20px;
     color: hsl(240, 12%, 12%);
@@ -139,7 +138,7 @@ input:required:invalid {
     font-size: 16px;
     font-weight: 600;
     color:hsl(240, 8%, 95%);
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     box-shadow: 0 2px 4px rgb(46, 111, 38);
     margin-top: 20px;
@@ -151,4 +150,76 @@ input:required:invalid {
     text-align: center;
     color:hsl(246, 25%, 77%);
     font-weight: 600;
+}
+@media screen and (max-width: 900px) {
+    main {
+        max-width: 80%;
+        padding: 0;
+    }
+    main h1 {
+        width: 100%;
+        margin-top: 10%;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    main p {
+        font-weight: 400;
+        text-align: center;
+        line-height: 2;
+    }
+}
+@media screen and (max-width: 375px) {
+    .outer-container {
+        margin: 30px;
+        margin-bottom: 20%;
+    }
+    main {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    main h1 {
+        font-size: 30px;
+        margin-top: 20%;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    main p {
+        font-size: 15px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .try-button {
+        width: 100%;
+        font-size: 14px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .form-email input {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    #claimButton {
+        font-size: 15px;
+        margin-top: 0px;
+    }
+
+    .term-services {
+        font-size: 10px;
+        line-height: 2;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+  
+    
 }
